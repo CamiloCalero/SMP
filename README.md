@@ -3,7 +3,7 @@
        width="350">
 </div>
 
-## Resource pack structure
+## Resource pack
 
 First of all, a resource pack is just a set of files —textures, fonts, sounds, etc.— that replace their corresponding game files. It must always follow this structure:
 
@@ -54,9 +54,9 @@ If for example you go to `MC_Resources/assets/minecraft/textures/entity/warden/`
    
 Here's a little experiment you can do. Find the Warden texture file `warden.png`, open it an edit it in Paint. Draw a big smile on the guy.
 
-You can now save that edited texture in its corresponding folder. **Remember to keep the original structure inside your texture pack** `yourTexturePack/assets/minecraft/textures/entity/warden/warden.png`. As of now, Minecraft will be able to recognize and use this resource pack folder. You can hop in the game, enter **Resource Packs** and activate your Happy Warden. This works and it's great for quick testing, but ideally you should zip the resource pack when you're ready to share.
+You can now save that edited texture in its corresponding folder. **Remember to keep the original structure inside your texture pack** `yourTexturePack/assets/minecraft/textures/entity/warden/warden.png`. As of now, Minecraft will be able to recognize and use this resource pack folder. You can hop in the game, enter **Resource Packs** and activate your Happy Warden. This works and it's great for quick testing, but ideally, you should zip the resource pack when you're ready to share. We'll talk about this in a while.
 
-To do that, select all three files in the root directory of the texture pack. Always remember these are: `pack.mcmeta`, `pack.png` and the `assets` folder. Now zip them, and put whatever name you want to the ZIP, maybe `HappyWarden.zip`. This is now the finished resource pack for your Happy Warden. You can send it to other people, and it will immediately work.
+Right now, you can name the resource pack folder `HappyWarden`, and keep editing anything you need.
 
 > Sometimes you might want to edit a block like a chest but doesn't appear anywhere. That's because a chest is not a block but an entity because Minecraft is weird. Some blocks that are not complete blocks are entities and some are not and it's a mess. You really have to look around sometimes.
 
@@ -64,11 +64,47 @@ To do that, select all three files in the root directory of the texture pack. Al
 
 First, you should check what language Minecraft is set to. Even if it's just English, there's US English, Canadian English, Pirate English, so make sure which one it is.  
 
-After that, you can head to your extracted JAR folder `MC_Resources/assets/minecraft/lang/en_us.json`, which is the file where all text in Minecraft resides if it's using US English. For example, you want to change the Wandering Trader's name to Peruvian. Open it in a text editor, use **Ctrl + F** to quickly look for `wandering` and once you find the line `"entity.minecraft.wandering_trader": "Wandering Trader",`, you can set this to `"entity.minecraft.wandering_trader": "Peruvian",`. This will make the mob itself have that name in the game. You can do this with mobs, items (Pacochelín), GUI elements, titles, etc.  
+After that, you can head to your extracted JAR folder `MC_Resources/assets/minecraft/lang/en_us.json`, which is the file where all text in Minecraft resides if it's using US English. For example, you want to change the Wandering Trader's name to Peruvian. Open it in a text editor, use **Ctrl + F** to quickly look for `wandering` and once you find the line 
+
+`"entity.minecraft.wandering_trader": "Wandering Trader",` 
+
+you can set this to 
+
+`"entity.minecraft.wandering_trader": "Peruvian",`. 
+
+This will make the mob itself have that name in the game. You can do this with mobs, items (Pacochelín), GUI elements, titles, etc.  
 
 When creating a resource pack, make sure everyone in the server will be able to see the change. If everyone is using English, but some use US English and some CA English, then you have to edit both `en_us.json` and `en_ca.json`. Internally the structure isn't the same for different languages, so remember to use **Ctrl + F**. And again, to save this to a resource pack, save it in the correct folder path, so `yourTexturePack/assets/minecraft/lang/en_us.json`, together with any other language files you might need to add.
 
-Always remember to zip the files once you are done testing and are ready to share!
+### Finalizing a pack
+
+Now you know how to:
+
+* Find any game file you want to edit
+* Edit some types of game files
+* How to store them in a resource pack
+
+To finalize a resource pack, you need to determine what Minecraft version/versions this pack is compatible with and zip it.
+
+The file pack.mcmeta is what determines what Minecraft versions the resource pack is made for. You can open this file with any text editor, like Windows Notepad and you will see this:
+
+```
+{
+  "pack": {
+    "min_format": 84,
+    "max_format": 84,
+    "description": "SMP Default Texture Pack"
+  }
+}
+```
+
+As you would expect, the `min_format` and `max_format` values set the range of Minecraft versions that will support this pack. In this case `84` corresponds to Java versiones between **Java Edition 26.1 Pre-Release 1** and **Java Edition 26.1.2**.  
+
+Refer to [Java Pack Format](https://minecraft.wiki/w/Pack_format#Java_Edition) for a complete version list and use the **Resource Pack Format** column. 
+
+The `pack.png` is simply the thumbnail Minecraft will show in the **Resource Pack** menu.
+
+Once you are done editing and organizing everything, select all three files in the resource pack root folder: `pack.mcmeta`, `pack.png` and the `assets` folder, and zip them. You can now share this ZIP file and it will immediately work as long as the Minecraft version is correct.
 
 ## Creating a custom entity model
 

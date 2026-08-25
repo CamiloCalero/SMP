@@ -66,7 +66,9 @@ First, you should check what language Minecraft is set to. Even if it's just Eng
 
 After that, you can head to your extracted JAR folder `MC_Resources/assets/minecraft/lang/en_us.json`, which is the file where all text in Minecraft resides if it's using US English. For example, you want to change the Wandering Trader's name to Peruvian. Open it in a text editor, use **Ctrl + F** to quickly look for `wandering` and once you find the line `"entity.minecraft.wandering_trader": "Wandering Trader",`, you can set this to `"entity.minecraft.wandering_trader": "Peruvian",`. This will make the mob itself have that name in the game. You can do this with mobs, items (Pacochelín), GUI elements, titles, etc.  
 
-When creating a resource pack, make sure everyone in the server will be able to see the change. If everyone is using English, but some use US English and some CA English, then you have to edit both `en_us.json` and `en_ca.json`. Internally the structure isn't the same for different languages, so remember to use **Ctrl + F**.
+When creating a resource pack, make sure everyone in the server will be able to see the change. If everyone is using English, but some use US English and some CA English, then you have to edit both `en_us.json` and `en_ca.json`. Internally the structure isn't the same for different languages, so remember to use **Ctrl + F**. And again, to save this to a resource pack, save it in the correct folder path, so `yourTexturePack/assets/minecraft/lang/en_us.json`, together with any other language files you might need to add.
+
+Always remember to zip the files once you are done testing and are ready to share!
 
 ## Creating a custom entity model
 
@@ -121,7 +123,7 @@ Section in the works.
 
 ## Updating resource pack
 
-Once you've finished modifying the resource pack, you need to create a GitHub release by uploading the pack in a `.zip` file and provide a hash for said file. Here are the steps.
+Once you've finished modifying the server resource pack, you need to create a GitHub release by uploading the pack in a `.zip` file and provide a hash for said file. Here are the steps.
 
 1. To create the ZIP file, remember to select all files inside the SMP folder (that is: assets, pack.mcmeta and pack.png), and zip them. **Do not zip the SMP folder**. When you open the ZIP, you want to see something like:
     
@@ -142,7 +144,7 @@ Once you've finished modifying the resource pack, you need to create a GitHub re
     
     This is important as the latter will cause Minecraft not to recognize it as a resource pack.
 
-2. Place the ZIP in the same location as the SHA1_Calculator tool if it's not already there. Double click SHA1_Calculator.bat and it will automatically calculate and copy the hash to your clipboard. Close that window and paste that strange text in the SHA-1 field shown in the next section.
+2. Place the ZIP in the same location as the SHA1_Calculator tool if it's not already there. Double click SHA1_Calculator.bat and it will automatically calculate and copy the hash to your clipboard. Close that window and paste that strange text in the SHA-1 field shown in the next step.
 
 3. Go to the GitHub repository → **Releases** → **Draft a new release**. Here there are a few fields to fill.
 
@@ -161,6 +163,10 @@ Once you've finished modifying the resource pack, you need to create a GitHub re
     SHA-1: 
     ```
 
+    This hash text is extremely important. It ensures your Minecraft client knows it has to update the resource pack.
+
     Below that, there's **Release label**. Make sure it's set to **Latest**
 
-    Finally, **Publish Release**. After that, you should reach out to Andrei so he can refresh the resource pack on the server. 
+    Finally, **Publish Release**. After that, you should reach out to Andrei so he can refresh the resource pack on the server.
+
+    You can also delete the ZIP from your computer, it is safely stored in GitHub.

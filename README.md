@@ -54,7 +54,7 @@ If for example you go to `assets/minecraft/textures/entity/warden/`, you are act
    
 Here's a little experiment you can do. Find the Warden texture file `warden.png`, open it an edit it in Paint. Draw a big smile on the guy.
 
-You can now save that edited texture in its corresponding folder. **Remember to keep the original structure inside your texture pack** `yourTexturePack/assets/minecraft/textures/entity/warden/warden.png`. As of now, Minecraft will be able to recognize and use this resource pack. You can hop in the game, enter **Resource Packs** and activate your Happy Warden. This works and it's great for quick testing, but ideally you should zip the resource pack.
+You can now save that edited texture in its corresponding folder. **Remember to keep the original structure inside your texture pack** `yourTexturePack/assets/minecraft/textures/entity/warden/warden.png`. As of now, Minecraft will be able to recognize and use this resource pack folder. You can hop in the game, enter **Resource Packs** and activate your Happy Warden. This works and it's great for quick testing, but ideally you should zip the resource pack when you're ready to share.
 
 To do that, select all three files in the root directory of the texture pack. Always remember these are: `pack.mcmeta`, `pack.png` and the `assets` folder. Now zip them, and put whatever name you want to the ZIP, maybe `HappyWarden.zip`. This is now the finished resource pack for your Happy Warden. You can send it to other people, and it will immediately work.
 
@@ -94,11 +94,13 @@ This program counts with many plugins to make whatever you want really. But to c
 
 Use CreateTextures to quickly create skins or textures with Minecraft version templates.
 
-Here you can just select the Minecraft version you're at and edit any item in the game using the texture editor.
+Here you can just select the Minecraft version you're at and edit any item in the game using the texture editor.  
+
+Also, totems! You can have your totems look like a mini-you, a 2D or 3D you. Click **Start Creating** → **Create Custom Totem**. Remember to check whether your skin is classic or slim. ✅
 
 <br clear="left">
 
-Here you can take any Minecraft entity and edit its 3D model and texture.
+Now, onto Blockbench. Here you can take any Minecraft entity and edit its 3D model and texture.
 
 Open Blockbench, go to **File** → **Plugins**, and search for CEM Template Loader, install it. 
 
@@ -106,6 +108,12 @@ Either on the new file window, or with **File** → **New**, scroll down to Load
 Here you will find a bunch of different entities you can edit. Select one, load it and start editing.
 
 Oh boy is this complicated...
+
+🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛
+
+Section in the works.
+
+🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛
 
 ## Updating resource pack
 

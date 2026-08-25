@@ -42,13 +42,13 @@ Sometimes you might need to check how Minecraft names certain textures and where
 1. Locate your Minecraft `.jar` file.
    
     Open your launcher folder. For example, if you use Modrinth, the launcher is located at `C:\Users\user\AppData\Roaming\ModrinthApp`. You can also use **Windows + R** and type `%appdata%` and look for the `ModrinthApp` folder.
-    Go to `meta/versions/yourVersion/yourVersion.jar` and extract it into some folder.
+    Go to `meta/versions/yourVersion/yourVersion.jar` and extract it into some folder. For this whole tutorial we'll call it MC_Resources, as in original resources.
 
-3. What you can see in the extracted folder is a bunch of game assets. Here are all the files you need and their correct location. Should you make any changes to an item, block or entity, they have to be placed in the exact same path. Here's a couple examples.
+3. What you can see in the extracted folder is a bunch of game assets. Here are all the files you need and the correct folder paths where Minecraft will look. Should you make any changes to an item, block or entity, they have to be placed in the exact same path. Here's a couple examples.
 
-### To find a texture for a specific item or entity
+### To find and modify a texture for a specific item or entity
 
-If for example you go to `assets/minecraft/textures/entity/warden/`, you are actually seeing the in-game textures for the Warden and his stuff. You can copy these to make your own textures, and later, your own models.
+If for example you go to `MC_Resources/assets/minecraft/textures/entity/warden/`, you are actually seeing the in-game textures for the Warden and his stuff. You can copy these to make your own textures, and later, your own models.
 
 #### 😊 Happy Warden
    
@@ -62,11 +62,15 @@ To do that, select all three files in the root directory of the texture pack. Al
 
 ### To rename something
 
-...
+First, you should check what language Minecraft is set to. Even if it's just English, there's US English, Canadian English, Pirate English, so make sure which one it is.  
+
+After that, you can head to your extracted JAR folder `MC_Resources/assets/minecraft/lang/en_us.json`, which is the file where all text in Minecraft resides if it's using US English. For example, you want to change the Wandering Trader's name to Peruvian. Open it in a text editor, use **Ctrl + F** to quickly look for `wandering` and once you find the line `"entity.minecraft.wandering_trader": "Wandering Trader",`, you can set this to `"entity.minecraft.wandering_trader": "Peruvian",`. This will make the mob itself have that name in the game. You can do this with mobs, items (Pacochelín), GUI elements, titles, etc.  
+
+When creating a resource pack, make sure everyone in the server will be able to see the change. If everyone is using English, but some use US English and some CA English, then you have to edit both `en_us.json` and `en_ca.json`. Internally the structure isn't the same for different languages, so remember to use **Ctrl + F**.
 
 ## Creating a custom entity model
 
-Here are the main tools to create resource packs for Minecraft. Click the image to head to the website.
+Now that you know how resource packs work, you can start with custom models. Here are the main tools to create resource packs for Minecraft. Click the image to head to the website.
 
 ### Blockbench
 
@@ -79,7 +83,7 @@ Here are the main tools to create resource packs for Minecraft. Click the image 
 
 Blockbench allows to create models, skins, textures, titles and animations.
 
-This program counts with many plugins to make whatever you want really. But to create custom models for named mobs, you want to install CEM Template Loader. More on this in the next section.
+This program counts with many plugins to make whatever you want really. But to create custom models for mobs or even specific mobs with a nametag, you want to install CEM Template Loader. More on this in a while.
 
 <br clear="left">
 

@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/277f7de3-c29e-4c8d-8e2a-bba0ed00daeb"
+  <img src="Images/pack_preview.png"
        width="350">
 </div>
 
@@ -77,7 +77,7 @@ Now that you know how resource packs work, you can start with custom models. Her
 ### Blockbench
 
 <a href="https://blockbench.net/">
-  <img src="https://github.com/user-attachments/assets/64674a01-0643-4449-8603-df1f48e8615f"
+  <img src="Images/Blockbench.png"
        align="left"
        width="100"
        style="margin-right: 10px;">
@@ -92,7 +92,7 @@ This program counts with many plugins to make whatever you want really. But to c
 ### CreateTextures
 
 <a href="https://createtextures.com/">
-  <img src="https://github.com/user-attachments/assets/aceaf504-1786-442f-80c4-e36e38ef7135"
+  <img src="Images/CreateTextures.png"
        align="left"
        width="100"
        style="margin-right: 10px;">
@@ -148,7 +148,7 @@ Once you've finished modifying the server resource pack, you need to create a Gi
 
 3. Go to the GitHub repository → **Releases** → **Draft a new release**. Here there are a few fields to fill.
 
-    <img width="450" alt="image" src="https://github.com/user-attachments/assets/e808d59d-e823-4744-b5e5-7175d100fcf4" />
+    <img width="450" alt="image" src="Images/ReleasePic.png" />
 
     In the tag dropdown menu shown above, select **Create new tag**. This tag must be something like `v1.0.0` or `v2.3.4`. Write it exactly like this with no spaces.
 

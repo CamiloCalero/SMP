@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Images/pack_preview.png"
+  <img src="Images/ReadMe/pack_preview.png"
        width="350">
 </div>
 
@@ -8,7 +8,7 @@
 First of all, a resource pack is just a set of files —textures, fonts, sounds, etc.— that replace their corresponding game files. It must always follow this structure:
 
 ```text
-SMP/
+yourResourcePack/
 ├── pack.png
 ├── pack.mcmeta
 └── assets/
@@ -113,7 +113,7 @@ Now that you know how resource packs work, you can start with custom models. Her
 ### Blockbench
 
 <a href="https://blockbench.net/">
-  <img src="Images/Blockbench.png"
+  <img src="Images/ReadMe/Blockbench.png"
        align="left"
        width="100"
        style="margin-right: 10px;">
@@ -128,7 +128,7 @@ This program counts with many plugins to make whatever you want really. But to c
 ### CreateTextures
 
 <a href="https://createtextures.com/">
-  <img src="Images/CreateTextures.png"
+  <img src="Images/ReadMe/CreateTextures.png"
        align="left"
        width="100"
        style="margin-right: 10px;">
@@ -142,20 +142,44 @@ Also, totems! You can have your totems look like a mini-you, a 2D or 3D you. Cli
 
 <br clear="left">
 
+### Editing a model
+
 Now, onto Blockbench. Here you can take any Minecraft entity and edit its 3D model and texture.
 
-Open Blockbench, go to **File** → **Plugins**, and search for CEM Template Loader, install it. 
+Open Blockbench, go to **File** → **Plugins**, search for CEM Template Loader and install it. 
 
 Either on the new file window, or with **File** → **New**, scroll down to Loaders and you will find **CEM Template Loader**. Click it.  
 Here you will find a bunch of different entities you can edit. Select one, load it and start editing.
 
-Oh boy is this complicated...
+<img width="1000" src="Images/ReadMe/BlockbenchInterface.png" />
 
-🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛
+<br>
 
-Section in the works.
+To the right, you will see the **Outliner** tab, which contains every part of the entity. Minecraft will expect this exact folder setup.
 
-🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛
+<img width="300" src="Images/ReadMe/MobFolders.png" />
+
+<br>
+
+You can add more parts to the model by selecting a part model, adding a folder  with <img width="12" src="Images/ReadMe/AddFolder.png" /> and clicling the **+** button.
+
+> As long as that new part is inside one of the base folder, it will work. If you add an extra part or folder outside any of the base folders, it won't work.
+
+<img width="300" src="Images/ReadMe/MobFolderHat.png" />
+
+<br>
+
+You can move the new part by dragging the gizmos, if you double click, you can scale the part. Keep in mind this editor just creates blocks, you can move, scale and rotate them. The remaining process is texturing.
+
+<img width="600" src="Images/ReadMe/BatEdit.gif" />
+
+<br>
+
+🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛
+
+Work in progress...
+
+🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛
 
 ## Updating resource pack
 
@@ -184,7 +208,7 @@ Once you've finished modifying the server resource pack, you need to create a Gi
 
 3. Go to the GitHub repository → **Releases** → **Draft a new release**. Here there are a few fields to fill.
 
-    <img width="450" alt="image" src="Images/ReleasePic.png" />
+    <img width="450" src="Images/ReadMe/ReleasePic.png" />
 
     In the tag dropdown menu shown above, select **Create new tag**. This tag must be something like `v1.0.0` or `v2.3.4`. Write it exactly like this with no spaces.
 

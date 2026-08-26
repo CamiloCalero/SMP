@@ -5,7 +5,7 @@
 
 ## Resource pack
 
-First of all, a resource pack is just a set of files —textures, fonts, sounds, etc.— that replace their corresponding game files. It must always follow this structure:
+First of all, a resource pack is just a set of assets —textures, fonts, sounds, etc.— that replace their corresponding game files. It must always follow this structure:
 
 ```text
 yourResourcePack/
@@ -39,28 +39,48 @@ If you want, you can download the SMP folder from this repository. It already ha
 
 Sometimes you might need to check how Minecraft names certain textures and where they are stored, or you might just want to change the name of something in the game, like for example Emerald → Pacochelín. Here's how you can do it:
 
-1. Locate your Minecraft `.jar` file.
+1. Locate your Minecraft `.jar` file and extract it.
    
     Open your launcher folder. For example, if you use Modrinth, the launcher is located at `C:\Users\user\AppData\Roaming\ModrinthApp`. You can also use **Windows + R** and type `%appdata%` and look for the `ModrinthApp` folder.
-    Go to `meta/versions/yourVersion/yourVersion.jar` and extract it into some folder. For this whole tutorial we'll call it MC_Resources, as in original resources.
+    Go to `meta/versions/yourVersion/<yourVersion>.jar` and extract it into some folder. 
+    
+    To extract the JAR file you have two options:
 
-3. What you can see in the extracted folder is a bunch of game assets. Here are all the files you need and the correct folder paths where Minecraft will look. Should you make any changes to an item, block or entity, they have to be placed in the exact same path. Here's a couple examples.
+    1. Use a third-party tool like NanaZip, 7-Zip or WinRAR. I recommend NanaZip as it correctly works in the right-click context menu on Windows 11. Use **NanaZip** → **Extract to "yourVersion\ "**, which will create a folder with the extracted contents.
 
-### To find and modify a texture for a specific item or entity
+    2. Create a folder to store extracted files. Open the folder, and from there right-click to **Open in Terminal**.
+
+        Type `jar -xvf "pathToYourJar\<yourVersion>.jar"`
+
+        This will extract all contents in the current folder.
+    
+    For this whole tutorial we'll call this folder `MC_Resources`, as in original resources, so rename it if you want. Because this folder is for reference only, you can move it and even delete or modify files inside. The idea is to have the names and locations of Minecraft files, to then make your own. 
+    
+    **Do not modify the `.jar` file in any way, only the extracted files folder. These are a copy of your game files, so it won't affect Minecraft.**
+
+2. Open the extracted files folder `MC_Resources`. What you can see in it is a bunch of game assets. Here are all the files you need and the correct folder paths where Minecraft will look. Should you make any changes to an item, block or entity, they have to be placed in the exact same path.
 
 If for example you go to `MC_Resources/assets/minecraft/textures/entity/warden/`, you are actually seeing the in-game textures for the Warden and his stuff. You can copy these to make your own textures, and later, your own models.
 
+### To find and modify a texture for a specific item or entity
+
+Now that you know how Minecraft reads assets, that is, their name and location, you can make your first texture pack.
+
+As mentioned above, you can download the SMP folder from this repository to your Minecraft resource pack folder, it's ready to work with Minecraft 26.1.2, and rename the folder to whatever you want. 
+
+You can delete all folders inside `assets/minecraft/` so that it is empty, and then add any files you want to modify in the game, following their correct folder path. Here are a couple examples of what you can do there:
+
 #### 😊 Happy Warden
    
-Here's a little experiment you can do. Find the Warden texture file `warden.png`, open it an edit it in Paint. Draw a big smile on the guy.
+Find the original Warden texture file `warden.png` inside `MC_Resources`, open it an edit it in Paint. Draw a big smile on the guy.
 
-You can now save that edited texture in its corresponding folder. **Remember to keep the original structure inside your texture pack** `yourTexturePack/assets/minecraft/textures/entity/warden/warden.png`. As of now, Minecraft will be able to recognize and use this resource pack folder. You can hop in the game, enter **Resource Packs** and activate your Happy Warden. This works and it's great for quick testing, but ideally, you should zip the resource pack when you're ready to share. We'll talk about this in a while.
+You can now save that edited texture in its corresponding folder. **Remember to keep the original structure inside your texture pack** `<yourTexturePack>/assets/minecraft/textures/entity/warden/warden.png`. As of now, Minecraft will be able to recognize and use this resource pack. Hop in the game, enter **Resource Packs** and activate your Happy Warden. This works and it's great for quick testing, but ideally, you should zip the resource pack when you're ready to share. We'll talk about this in a while.
 
 Right now, you can name the resource pack folder `HappyWarden`, and keep editing anything you need.
 
 > Sometimes you might want to edit a block like a chest but doesn't appear anywhere. That's because a chest is not a block but an entity because Minecraft is weird. Some blocks that are not complete blocks are entities and some are not and it's a mess. You really have to look around sometimes.
 
-### To rename something
+#### To rename something
 
 First, you should check what language Minecraft is set to. Even if it's just English, there's US English, Canadian English, Pirate English, so make sure which one it is.  
 
@@ -86,7 +106,9 @@ Now you know how to:
 
 To finalize a resource pack, you need to determine what Minecraft version/versions this pack is compatible with and zip it.
 
-The file pack.mcmeta is what determines what Minecraft versions the resource pack is made for. You can open this file with any text editor, like Windows Notepad and you will see this:
+If you did decide to make the resource pack from a scratch, you will have to create the three main files for a resource pack: `pack.mcmeta`, `pack.png` and the `assets` folder you might have already created for the Happy Warden, if not, you should check how that goes.
+
+The file `pack.mcmeta` is what determines what Minecraft versions the resource pack is made for. You can create any text file, change the extension from `.txt` to `.mcmeta`, edit it with any text editor, like Windows Notepad and you will see this:
 
 ```
 {
@@ -102,7 +124,7 @@ As you would expect, the `min_format` and `max_format` values set the range of M
 
 Refer to [Java Pack Format](https://minecraft.wiki/w/Pack_format#Java_Edition) for a complete version list and use the **Resource Pack Format** column. 
 
-The `pack.png` is simply the thumbnail Minecraft will show in the **Resource Pack** menu.
+The `pack.png` is simply the thumbnail Minecraft will show in the **Resource Pack** menu, usually 64x64 pixels.
 
 Once you are done editing and organizing everything, select all three files in the resource pack root folder: `pack.mcmeta`, `pack.png` and the `assets` folder, and zip them. You can now share this ZIP file and it will immediately work as long as the Minecraft version is correct.
 
@@ -161,7 +183,7 @@ To the right, you will see the **Outliner** tab, which contains every part of th
 
 <br>
 
-You can add more parts to the model by selecting a part model, adding a folder  with <img width="12" src="Images/ReadMe/AddFolder.png" /> and clicling the **+** button.
+You can add more parts to the model by selecting a part, adding a folder  with <img width="12" src="Images/ReadMe/AddFolder.png" /> and clicling the **+** button.
 
 > As long as that new part is inside one of the base folder, it will work. If you add an extra part or folder outside any of the base folders, it won't work.
 

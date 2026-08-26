@@ -33,7 +33,7 @@ yourResourcePack/
 
 You can find the correct way to store a specific file (for example a chest texture or the Wither spawn sound) by obtaining the game files themselves (more on this below) or if you are using CreateTextures (for textures only duh), it will automatically place the files where they belong, all you have to do is copy that exact structure in the SMP resource pack folder.
 
-If you want, you can download the SMP folder from this repository. It already has the necessary files for Minecraft to recognize this as a resource pack, these files are: `pack.mcmeta`, `pack.png` and the `assets` folder.
+If you want, you can download the SMP folder from this repository. It already has the necessary files for Minecraft to recognize this as a resource pack, these files are: `pack.mcmeta`, `pack.png` and the `assets` folder. **Remember these**.
 
 ### Obtaining game files
 
@@ -78,6 +78,8 @@ You can now save that edited texture in its corresponding folder. **Remember to 
 
 Right now, you can name the resource pack folder `HappyWarden`, and keep editing anything you need.
 
+Notice how the relative path for `warden.png` starting from `assets`, is the same in both `MC_Resources` and `HappyWarden`. **This relative path always has to be an exact replica for any asset you modify**.
+
 > Sometimes you might want to edit a block like a chest but doesn't appear anywhere. That's because a chest is not a block but an entity because Minecraft is weird. Some blocks that are not complete blocks are entities and some are not and it's a mess. You really have to look around sometimes.
 
 #### To rename something
@@ -108,14 +110,14 @@ To finalize a resource pack, you need to determine what Minecraft version/versio
 
 If you did decide to make the resource pack from a scratch, you will have to create the three main files for a resource pack: `pack.mcmeta`, `pack.png` and the `assets` folder you might have already created for the Happy Warden, if not, you should check how that goes.
 
-The file `pack.mcmeta` is what determines what Minecraft versions the resource pack is made for. You can create any text file, change the extension from `.txt` to `.mcmeta`, edit it with any text editor, like Windows Notepad and you will see this:
+The file `pack.mcmeta` is what determines which Minecraft versions the resource pack is made for. You can create any text file, change the extension from `.txt` to `.mcmeta`, edit it with any text editor like Windows Notepad and paste this:
 
 ```
 {
   "pack": {
     "min_format": 84,
     "max_format": 84,
-    "description": "SMP Default Texture Pack"
+    "description": "Your pack description"
   }
 }
 ```

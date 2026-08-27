@@ -5,7 +5,7 @@
 
 ## Resource pack
 
-First of all, a resource pack is just a set of assets —textures, fonts, sounds, etc.— that replace their corresponding game files. It must always follow this structure:
+First of all, a resource pack is just a set of assets —textures, fonts, sounds, etc.— that replace their corresponding game files. This is the general structure a resource pack must follow:
 
 ```text
 yourResourcePack/
@@ -13,7 +13,6 @@ yourResourcePack/
 ├── pack.mcmeta
 └── assets/
     └── minecraft/
-        ├── blockstates/
         ├── lang/
         │   └── en_us.json
         ├── optifine/
@@ -30,6 +29,8 @@ yourResourcePack/
             └── item/
                 └── itemName.png
 ```
+
+You don't need all these files right away, throughout this tutorial you'll se how to add these step by step.
 
 You can find the correct way to store a specific file (for example a chest texture or the Wither spawn sound) by obtaining the game files themselves (more on this below) or if you are using CreateTextures (for textures only duh), it will automatically place the files where they belong, all you have to do is copy that exact structure in the SMP resource pack folder.
 
@@ -54,7 +55,7 @@ Sometimes you might need to check how Minecraft names certain textures and where
 
         This will extract all contents in the current folder.
     
-    For this whole tutorial we'll call this folder `MC_Resources`, as in original resources, so rename it if you want. Because this folder is for reference only, you can move it and even delete or modify files inside. The idea is to have the names and locations of Minecraft files, to then make your own. 
+    For this whole tutorial we'll call this folder `MC_Resources`, as in original resources, so you should rename it to avoid confusion. Because this folder is for reference only, you can move it and even delete or modify files inside. The idea is to have the names and locations of Minecraft files, to then make your own. 
     
     **Do not modify the `.jar` file in any way, only the extracted files folder. These are a copy of your game files, so it won't affect Minecraft.**
 
@@ -128,7 +129,7 @@ Refer to [Java Pack Format](https://minecraft.wiki/w/Pack_format#Java_Edition) f
 
 The `pack.png` is simply the thumbnail Minecraft will show in the **Resource Pack** menu, usually 64x64 pixels.
 
-Once you are done editing and organizing everything, select all three files in the resource pack root folder: `pack.mcmeta`, `pack.png` and the `assets` folder, and zip them. You can now share this ZIP file and it will immediately work as long as the Minecraft version is correct.
+Once you are done editing and organizing everything, select all three files in the resource pack root folder: `pack.mcmeta`, `pack.png` and the `assets` folder, and zip them. You can now share this ZIP and it will immediately work as long as the Minecraft version is correct.
 
 ## Creating a custom entity model
 

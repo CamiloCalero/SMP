@@ -61,7 +61,9 @@ Sometimes you might need to check how Minecraft names certain textures and where
 
 2. Open the extracted files folder `MC_Resources`. What you can see in it is a bunch of game assets. Here are all the files you need and the correct folder paths where Minecraft will look. Should you make any changes to an item, block or entity, they have to be placed in the exact same path.
 
-If for example you go to `MC_Resources/assets/minecraft/textures/entity/warden/`, you are actually seeing the in-game textures for the Warden and his stuff. You can copy these to make your own textures, and later, your own models.
+If for example you go to `MC_Resources/assets/minecraft/textures/entity/warden/`, you are actually seeing the in-game textures for the Warden entity and his stuff. You can copy these to make your own textures, and later, your own models.
+
+> An entity
 
 ### To find and modify a texture for a specific item or entity
 
@@ -118,7 +120,7 @@ The file `pack.mcmeta` is what determines which Minecraft versions the resource 
   "pack": {
     "min_format": 84,
     "max_format": 84,
-    "description": "Your pack description"
+    "description": "Your pack description."
   }
 }
 ```
@@ -194,11 +196,70 @@ You can add more parts to the model by selecting a part, adding a folder  with <
 
 <br>
 
-You can move the new part by dragging the gizmos, if you double click, you can scale the part. Keep in mind this editor just creates blocks, you can move, scale and rotate them. The remaining process is texturing.
+You can move the new part by dragging the gizmos (colored handles), if you double click, you can scale the part. Keep in mind this editor just creates blocks, you can move, scale and rotate them. The remaining process is texturing.
 
 <img width="600" src="Images/ReadMe/BatEdit.gif" />
 
 <br>
+
+
+
+Once you are done modeling and texturing, you need to save the texture and the model in separate places. In your resource pack, create the following folders:
+
+```
+assets/
+└── optifine/
+    ├── cem/
+    └── random/
+        └── entity/
+```
+
+Inside the entity folder, you will create another folder with the name of the entity you modified. **Refer to your `MC_Resources/assets/minecraft/textures/` folder and find the name of the folder and the texture file of the entity you modified**. For example, if it's a bat, then create a folder named `bat`.
+
+> For entities with variants, the folder is the name of the entity and it contains the different variant textures. For example, the `MC_Resources/assets/minecraft/textures/entity/wolf/` folder contains all textures for all types of wolves.
+
+Now, in this entity folder, you need to create a properties file and save the texture from Blockbench. To do this, create a text file with the name of the entity and change its extension from `.txt` to `.properties`. Edit it with any text editor and paste this:
+
+```
+models.2=2
+skins.2=<entityName2>
+
+name.2=<inGameNametag>
+```
+
+So if you are making a custom bat model for any bats with the nametag "Archibald", `bat.properties` would look like this:
+
+```
+models.2=2
+skins.2=bat2
+
+name.2=Archibald
+```
+
+and save.
+
+Next, save the texture from the left panel in Blockbench. You have to name it `<entityNameX.png.>`, where *X* is the identifier of that custom entity texture. So for "Archibald", you have to save it as `bat2.png`.
+
+Notice how in `bat2.png` and inside of `bat.properties` everything is "2". This makes Minecraft link that modified model (models.2=2) to the modified texture (skins.2=bat2), and applies it to any bat with the nametag "Archibald". We will elaborate on this later. For now, you have finished this folder.
+
+Return to Blockbench and delete the texture on the left panel. This will leave the model without a texture and displaying random colors. You can now save the model as a `.jem` file inside `optifine/cem/` with the entity name, but, **for some reason, for entities with variants, like for example a Skeleton Horse, the name has to be inverted.**. This means what while the texture would be saved as `horse_skeleton2.png` (as it also appears in `MC_Resources`), the model has to be saved as `skeleton_horse.jem`.
+
+Your texture pack should look like this:
+
+```
+assets/
+└── optifine/
+    ├── cem/
+    |   └── entityName.jem              ← Inverted if it has variants
+    └── random/
+        └── entity/
+            ├── entityName.properties
+            └── entityName2.png
+```
+
+> The SMP resource pack contains models for entities with variants. If at any point you have doubts, you can check the naming convention in that pack, both in `optifine/cem/` and `optifine/random/entity/`.
+
+At this point, you can open Minecraft and check if it works by naming any entity you modified with the name inside that entity properties file.
 
 🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛
 

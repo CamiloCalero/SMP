@@ -12,7 +12,7 @@
 			],
 			"submodels": [
 				{
-					"id": "bone6",
+					"id": "hairbow",
 					"invertAxis": "xy",
 					"translate": [-2, 33, -5],
 					"rotate": [0, -45, 0],
@@ -110,6 +110,15 @@
 								}
 							]
 						}
+					]
+				},
+				{
+					"id": "horn",
+					"invertAxis": "xy",
+					"translate": [0, 22, -9],
+					"boxes": [
+						{"coordinates": [-1, 11, 2, 2, 3, 2], "textureOffset": [27, 18]},
+						{"coordinates": [-0.5, 14, 2.5, 1, 4, 1], "textureOffset": [36, 18]}
 					]
 				}
 			]

@@ -63,8 +63,6 @@ Sometimes you might need to check how Minecraft names certain textures and where
 
 If for example you go to `MC_Resources/assets/minecraft/textures/entity/warden/`, you are actually seeing the in-game textures for the Warden entity and his stuff. You can copy these to make your own textures, and later, your own models.
 
-> An entity
-
 ### To find and modify a texture for a specific item or entity
 
 Now that you know how Minecraft reads assets, that is, their name and location, you can make your first texture pack.

@@ -133,7 +133,7 @@ Once you are done editing and organizing everything, select all three files in t
 
 ## Creating a custom entity model
 
-Now that you know how resource packs work, you can start with custom models. Here are the main tools to create resource packs for Minecraft. Click the image to head to the website.
+Now that you know how resource packs work, you can start with custom models. Here are some tools to create resource packs for Minecraft. Click the image to head to the website.
 
 ### Blockbench
 
@@ -214,9 +214,9 @@ assets/
 
 Inside the entity folder, you will create another folder with the name of the entity you modified. **Refer to your `MC_Resources/assets/minecraft/textures/` folder and find the name of the folder and the texture file of the entity you modified**. For example, if it's a bat, then create a folder named `bat`.
 
-> For entities with variants, the folder is the name of the entity and it contains the different variant textures. For example, the `MC_Resources/assets/minecraft/textures/entity/wolf/` folder contains all textures for all types of wolves.
+> For entities with variants, the folder is the name of the entity and it contains the different variant textures. For example, `MC_Resources/assets/minecraft/textures/entity/wolf/` contains all textures for all types of wolves.
 
-Now, in this entity folder, you need to create a properties file and save the texture from Blockbench. To do this, create a text file with the name of the entity and change its extension from `.txt` to `.properties`. Edit it with any text editor and paste this:
+Now, in this entity folder `bat`, you need to create a properties file and save the texture from Blockbench. To do this, create a text file with the name of the entity and change its extension from `.txt` to `.properties`. Edit it with any text editor and paste this:
 
 ```
 models.2=2
@@ -236,28 +236,32 @@ name.2=Archibald
 
 and save.
 
-Next, save the texture from the left panel in Blockbench. You have to name it `<entityNameX.png.>`, where *X* is the identifier of that custom entity texture. So for "Archibald", you have to save it as `bat2.png`.
+Next, save the texture from the left panel in Blockbench. You have to name it `<entityNameX.png.>`, where *X* is the identifier **starting at 2** for that custom entity texture, and it increases as you make more models for that entity. So for "Archibald", you have to save it as `bat2.png`, as if `bat.png` or `bat1.png` was the vanilla version.
 
-Notice how in `bat2.png` and inside of `bat.properties` everything is "2". This makes Minecraft link that modified model (models.2=2) to the modified texture (skins.2=bat2), and applies it to any bat with the nametag "Archibald". We will elaborate on this later. For now, you have finished this folder.
+Notice how in `bat2.png` and inside of `bat.properties` everything is "2". This makes Minecraft link that modified model (models.2=2) to the modified texture (skins.2=bat2), and applies it to any bat with the nametag "Archibald". We will elaborate on this later. For now, you have finished this folder and this will work.
 
-Return to Blockbench and delete the texture on the left panel. This will leave the model without a texture and displaying random colors. You can now save the model as a `.jem` file inside `optifine/cem/` with the entity name, but, **for some reason, for entities with variants, like for example a Skeleton Horse, the name has to be inverted.**. This means what while the texture would be saved as `horse_skeleton2.png` (as it also appears in `MC_Resources`), the model has to be saved as `skeleton_horse.jem`.
+Return to Blockbench and delete the texture on the left panel. This will leave the model without a texture and displaying random colors. You can now save the model as `bat.jem` file inside `optifine/cem/`.
 
-Your texture pack should look like this:
+In case you didn't edit a bat, your texture pack should look like this:
 
 ```
 assets/
 └── optifine/
     ├── cem/
-    |   └── entityName.jem              ← Inverted if it has variants
+    |   └── entityName.jem
     └── random/
         └── entity/
             ├── entityName.properties
             └── entityName2.png
 ```
 
-> The SMP resource pack contains models for entities with variants. If at any point you have doubts, you can check the naming convention in that pack, both in `optifine/cem/` and `optifine/random/entity/`.
+> The SMP resource pack contains models for entities with variants (). If at any point you have doubts, you can check the naming convention in that pack, both in `optifine/cem/` and `optifine/random/entity/`.
 
 At this point, you can open Minecraft and check if it works by naming any entity you modified with the name inside that entity properties file.
+
+### Entities with more than one custom model
+
+If you want to create multiple custom models for a single entity, for example different Creeper variants, you need to have one model file that contains all variants, and separate texture files.
 
 🟨⬛🟨⬛🟨⬛🟨⬛🟨⬛
 
